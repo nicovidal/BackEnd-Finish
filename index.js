@@ -8,6 +8,12 @@ const cors= require('cors');
 
 const app = express();
 
+dbConnection();
+
+app.use(cors())
+
+
+
 
 //directorio publico
 app.use(express.static('public'));
@@ -24,10 +30,6 @@ app.use('/api/events',require('./routes/events'))
 //todo lo que vaya a exportar , estara en esa ruta
 
 //base de datos
-dbConnection();
-
-app.use(cors())
-
 
 
 
